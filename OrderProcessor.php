@@ -18,7 +18,7 @@ class OrderProcessor
         $recent = $this->orderRepository->getRecentOrderCount($order);
 
         if ($recent > 0) {
-            throw new Exception('Duplicate order likely.');
+            throw new \Exceptions\OrderEcxception('Duplicate order likely.');
         }
 
         $this->biller->bill($order->account->id, $order->amount);

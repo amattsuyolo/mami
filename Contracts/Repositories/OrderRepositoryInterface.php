@@ -9,4 +9,9 @@ interface OrderRepositoryInterface
      *  @return Int
      */
     public function getRecentOrderCount($order);
+    /**
+     * @param Array $data
+     * @return Void
+     */
+    public function create($data);
 }

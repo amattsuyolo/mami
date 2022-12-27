@@ -23,7 +23,7 @@ class OrderProcessor
 
         $this->biller->bill($order->account->id, $order->amount);
 
-        DB::table('orders')->insert(array(
+        $this->orderRepository->create(array(
             'account' => $order->account->id,
             'amount' => $order->amount,
             'created_at' => Carbon::now()

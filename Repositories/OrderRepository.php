@@ -16,4 +16,11 @@ class OrderRepository implements OrderRepositoryInterface
             ->where('created_at', '>=', $timestamp)
             ->count();
     }
+    /**
+     * @inheritDoc
+     */
+    public function create($data)
+    {
+        DB::table('orders')->insert($data);
+    }
 }
